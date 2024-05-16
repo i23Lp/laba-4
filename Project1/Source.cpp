@@ -45,6 +45,13 @@ int main()
             velocity1.y *= -1;
         }
         circle.move(velocity2.x, velocity2.y);
+        if (rectangle.getGlobalBounds().intersects(circle.getGlobalBounds())) {
+            // Расчет новых скоростей для отскока
+            velocity1.x = -velocity1.x;
+            velocity1.y = -velocity1.y;
+            velocity2.x = -velocity2.x;
+            velocity2.y = -velocity2.y;
+        }
         // Отрисовка
         window1.clear();
         window1.draw(rectangle);
