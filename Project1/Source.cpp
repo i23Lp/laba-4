@@ -4,13 +4,13 @@ using namespace sf;
 
 int main()
 {
-    RenderWindow window1(VideoMode(800, 600), "Многоугольники");
+    RenderWindow window1(VideoMode(800, 600), "фигуры");
 
-    // Создание прямоугольника
-    sf::RectangleShape rectangle(sf::Vector2f(100, 50)); // Размер прямоугольника
+   
+    sf::RectangleShape rectangle(sf::Vector2f(100, 50)); 
     rectangle.setPosition(window1.getSize().x / 4.f, window1.getSize().y / 2.f);
 
-    sf::CircleShape circle(50); // Радиус круга
+    sf::CircleShape circle(50);  
     circle.setPosition(window1.getSize().x / 2.f, window1.getSize().y / 4.f);
     circle.setFillColor(Color::Yellow);
 
@@ -46,13 +46,13 @@ int main()
         }
         circle.move(velocity2.x, velocity2.y);
         if (rectangle.getGlobalBounds().intersects(circle.getGlobalBounds())) {
-            // Расчет новых скоростей для отскока
+         
             velocity1.x = -velocity1.x;
             velocity1.y = -velocity1.y;
             velocity2.x = -velocity2.x;
             velocity2.y = -velocity2.y;
         }
-        // Отрисовка
+ 
         window1.clear();
         window1.draw(rectangle);
         window1.draw(circle);
