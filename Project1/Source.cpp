@@ -4,7 +4,7 @@ using namespace sf;
 
 int main()
 {
-    RenderWindow window1(VideoMode(800, 600), "Многоугольники");
+    RenderWindow window1(VideoMode(800, 600), "мн");
 
     // Создание прямоугольника
     sf::RectangleShape rectangle(sf::Vector2f(100, 50)); // Размер прямоугольника
