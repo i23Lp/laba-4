@@ -14,7 +14,8 @@ int main()
     circle.setPosition(window1.getSize().x / 2.f, window1.getSize().y / 4.f);
     circle.setFillColor(Color::Yellow);
 
-    Vector2f velocity1(2.5f, 2.5f); // Уменьшенная скорость
+    Vector2f velocity1(2.5f, 2.5f);
+    Vector2f velocity2(-2.5f, -2.5f);
     bool moveRight = true;
 
     // Установка цвета прямоугольника в желтый
