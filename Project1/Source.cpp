@@ -2,6 +2,7 @@
 #include <SFML/System.hpp>
 #include <random>
 using namespace sf;
+using namespace std;
 
 int main()
 {
