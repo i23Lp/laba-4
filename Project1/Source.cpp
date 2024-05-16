@@ -18,8 +18,6 @@ int main()
     Vector2f velocity2(-0.05f, -0.05f);
     bool moveRight = true;
 
-    // Установка цвета прямоугольника в желтый
-    rectangle.setFillColor(Color::Yellow);
 
     while (window1.isOpen())
     {
@@ -46,7 +44,7 @@ int main()
         {
             velocity1.y *= -1;
         }
-
+        circle.move(velocity2.x, velocity2.y);
         // Отрисовка
         window1.clear();
         window1.draw(rectangle);
