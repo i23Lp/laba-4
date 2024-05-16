@@ -4,13 +4,17 @@ using namespace sf;
 
 int main()
 {
-    RenderWindow window1(VideoMode(800, 600), L"многоугольник");
+    RenderWindow window1(VideoMode(800, 600), "Многоугольники");
 
     // Создание прямоугольника
     sf::RectangleShape rectangle(sf::Vector2f(100, 50)); // Размер прямоугольника
     rectangle.setPosition(window1.getSize().x / 4.f, window1.getSize().y / 2.f);
 
-    Vector2f velocity1(0.05f, 0.05f); // Уменьшенная скорость
+    sf::CircleShape circle(50); // Радиус круга
+    circle.setPosition(window1.getSize().x / 2.f, window1.getSize().y / 4.f);
+    circle.setFillColor(Color::Red);
+
+    Vector2f velocity1(2.5f, 2.5f); // Уменьшенная скорость
     bool moveRight = true;
 
     // Установка цвета прямоугольника в желтый
@@ -42,6 +46,7 @@ int main()
             velocity1.y *= -1;
         }
 
+        // Отрисовка
         window1.clear();
         window1.draw(rectangle);
         window1.display();
