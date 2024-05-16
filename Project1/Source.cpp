@@ -27,4 +27,15 @@ int main()
                 window1.close();
         }
     }
+    polygon1.move(velocity1.x, velocity1.y);
+    if (moveRight && polygon1.getPosition().x + polygon1.getGlobalBounds().width > window1.getSize().x)
+    {
+        moveRight = false;
+        velocity1.x *= -1; // Изменение направления при столкновении с правой границей
+    }
+    else if (!moveRight && polygon1.getPosition().x < 0)
+    {
+        moveRight = true;
+        velocity1.x *= -1; // Изменение направления при столкновении с левой границей
+    }
 }
