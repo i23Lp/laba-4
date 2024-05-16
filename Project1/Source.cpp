@@ -6,7 +6,7 @@ int main()
 {
     RenderWindow window1(VideoMode(800, 600), "Многоугольники");
 
-    int sides1 = 5;
+    int sides1 = 7;
     float radius1 = 50.f;
     ConvexShape polygon1;
     polygon1.setPointCount(sides1);
