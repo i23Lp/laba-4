@@ -7,21 +7,21 @@ int main()
 {
     RenderWindow window1(VideoMode(800, 600), "Многоугольники");
 
-    // Создание прямоугольника
-    sf::RectangleShape rectangle(sf::Vector2f(100, 50)); // Размер прямоугольника
+    
+    sf::RectangleShape rectangle(sf::Vector2f(100, 50));  
     rectangle.setPosition(window1.getSize().x / 4.f, window1.getSize().y / 2.f);
     rectangle.setFillColor(Color::Yellow);
 
-    // Создание круга
-    sf::CircleShape circle(50); // Радиус круга
+    
+    sf::CircleShape circle(50);  
     circle.setPosition(window1.getSize().x / 2.f, window1.getSize().y / 4.f);
     circle.setFillColor(Color::Red);
 
-    Vector2f velocity1(2.5f, 2.5f); // Уменьшенная скорость
-    Vector2f velocity2(-2.5f, -2.5f); // Скорость круга
+    Vector2f velocity1(2.5f, 2.5f);  
+    Vector2f velocity2(-2.5f, -2.5f);  
     bool moveRight = true;
 
-    // Генератор случайных чисел
+    
     std::default_random_engine generator;
     std::uniform_int_distribution<int> distribution(1, 2);
 
@@ -34,7 +34,7 @@ int main()
                 window1.close();
         }
 
-        // Обновление положения прямоугольника
+       
         rectangle.move(velocity1.x, velocity1.y);
         if (moveRight && rectangle.getPosition().x + rectangle.getSize().x > window1.getSize().x)
         {
@@ -52,12 +52,12 @@ int main()
             velocity1.y *= -1;
         }
 
-        // Обновление положения круга
+      
         circle.move(velocity2.x, velocity2.y);
 
-        // Проверка столкновения и изменение скорости
+         
         if (rectangle.getGlobalBounds().intersects(circle.getGlobalBounds())) {
-            // Случайное изменение направления одного из объектов
+           
             if (distribution(generator) == 1) {
                 velocity1.x = -velocity1.x;
             }
@@ -66,10 +66,10 @@ int main()
             }
         }
 
-        // Отрисовка
+        
         window1.clear();
         window1.draw(rectangle);
-        window1.draw(circle); // Рисуем круг
+        window1.draw(circle); 
         window1.display();
     }
 
