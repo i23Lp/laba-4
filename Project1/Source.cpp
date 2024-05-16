@@ -18,7 +18,7 @@ int main()
     polygon1.setFillColor(Color::Green);
     polygon1.setPosition(window1.getSize().x / 4.f, window1.getSize().y / 2.f);
 
-    Vector2f velocity1(5.f, 5.f);
+    Vector2f velocity1(0.015f,0.015f);
     bool moveRight = true;
 
     while (window1.isOpen())
