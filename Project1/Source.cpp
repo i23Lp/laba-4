@@ -4,22 +4,17 @@ using namespace sf;
 
 int main()
 {
-    RenderWindow window1(VideoMode(1000, 800), L"Многоугольник");
+    RenderWindow window1(VideoMode(800, 600), "Многоугольники");
 
-    int sides1 = 7;
-    float radius1 = 50.f;
-    ConvexShape polygon1;
-    polygon1.setPointCount(sides1);
-    for (int i = 0; i < sides1; i++)
-    {
-        float angle = 2.f * 3.14 * i / sides1 - 3.14 / 2.f;
-        polygon1.setPoint(i, Vector2f(cos(angle) * radius1, sin(angle) * radius1));
-    }
-    polygon1.setFillColor(Color::Green);
-    polygon1.setPosition(window1.getSize().x / 4.f, window1.getSize().y / 2.f);
+    // Создание прямоугольника
+    sf::RectangleShape rectangle(sf::Vector2f(100, 50)); // Размер прямоугольника
+    rectangle.setPosition(window1.getSize().x / 4.f, window1.getSize().y / 2.f);
 
-    Vector2f velocity1(0.015f,0.015f);
+    Vector2f velocity1(0.05f, 0.05f); // Уменьшенная скорость
     bool moveRight = true;
+
+    // Установка цвета прямоугольника в желтый
+    rectangle.setFillColor(Color::Yellow);
 
     while (window1.isOpen())
     {
@@ -30,26 +25,25 @@ int main()
                 window1.close();
         }
 
-        polygon1.move(velocity1.x, velocity1.y);
-        if (moveRight && polygon1.getPosition().x + polygon1.getGlobalBounds().width > window1.getSize().x)
+        rectangle.move(velocity1.x, velocity1.y);
+        if (moveRight && rectangle.getPosition().x + rectangle.getSize().x > window1.getSize().x)
         {
             moveRight = false;
             velocity1.x *= -1;
         }
-        else if (!moveRight && polygon1.getPosition().x < 0)
+        else if (!moveRight && rectangle.getPosition().x < 0)
         {
             moveRight = true;
             velocity1.x *= -1;
         }
 
-        if (polygon1.getPosition().y + polygon1.getGlobalBounds().height > window1.getSize().y || polygon1.getPosition().y < 0)
+        if (rectangle.getPosition().y + rectangle.getSize().y > window1.getSize().y || rectangle.getPosition().y < 0)
         {
             velocity1.y *= -1;
         }
 
-        
         window1.clear();
-        window1.draw(polygon1);
+        window1.draw(rectangle);
         window1.display();
     }
 
