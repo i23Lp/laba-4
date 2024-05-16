@@ -55,6 +55,7 @@ int main()
         // Отрисовка
         window1.clear();
         window1.draw(rectangle);
+        window1.draw(circle);
         window1.display();
     }
 
