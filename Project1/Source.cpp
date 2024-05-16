@@ -38,4 +38,8 @@ int main()
         moveRight = true;
         velocity1.x *= -1; // Изменение направления при столкновении с левой границей
     }
+    if (polygon1.getPosition().y + polygon1.getGlobalBounds().height > window1.getSize().y || polygon1.getPosition().y < 0)
+    {
+        velocity1.y *= -1; // Изменение направления при столкновении с вертикальными границами
+    }
 }
