@@ -4,7 +4,7 @@ using namespace sf;
 
 int main()
 {
-    RenderWindow window1(VideoMode(800, 600), "фигуры");
+    RenderWindow window1(VideoMode(800, 600), L"фигуры");
 
    
     sf::RectangleShape rectangle(sf::Vector2f(100, 50)); 
