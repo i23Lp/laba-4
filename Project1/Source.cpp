@@ -4,7 +4,7 @@ using namespace sf;
 
 int main()
 {
-    RenderWindow window1(VideoMode(800, 600), "Многоугольники");
+    RenderWindow window1(VideoMode(800, 600), L"Многоугольники");
 
     int sides1 = 7;
     float radius1 = 50.f;
