@@ -42,4 +42,7 @@ int main()
     {
         velocity1.y *= -1; // Изменение направления при столкновении с вертикальными границами
     }
+    window1.clear();
+    window1.draw(polygon1);
+    window1.display();
 }
